@@ -1,0 +1,65 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="account_id" type="xs:int"/>
+  <xs:element name="address_id" type="xs:int"/>
+  <xs:element name="account_number" type="xs:int"/>
+  <xs:element name="sales_channel" type="xs:string"/>
+  <xs:element name="sub_channel" type="xs:string"/>
+  <xs:element name="profile_sub_channel" type="xs:string"/>
+  <xs:element name="account_name" type="xs:string"/>
+  <xs:element name="vat_display" type="xs:string"/>
+  <xs:element name="fraud_bankruptcy" type="xs:string"/>
+  <xs:element name="page_num" type="xs:byte"/>
+  <xs:element name="bill_to_address" type="xs:string"/>
+  <xs:element name="branch_name" type="xs:string"/>
+  <xs:element name="transactions_list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="row" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="trx_number"/>
+              <xs:element type="xs:string" name="customer_trx_id"/>
+              <xs:element type="xs:byte" name="is_pdf_available"/>
+              <xs:element type="xs:string" name="type"/>
+              <xs:element type="xs:string" name="pay_type"/>
+              <xs:element type="xs:string" name="status"/>
+              <xs:element type="xs:string" name="status_trx"/>
+              <xs:element type="xs:string" name="bpid"/>
+              <xs:element type="xs:string" name="currency"/>
+              <xs:element type="xs:string" name="fo_cust_number"/>
+              <xs:element type="xs:string" name="reference_number"/>
+              <xs:element type="xs:string" name="rn_display"/>
+              <xs:element type="xs:string" name="vat_display"/>
+              <xs:element type="xs:string" name="prom_date_ctrl"/>
+              <xs:element type="xs:string" name="folio_display"/>
+              <xs:element type="xs:string" name="viewxml_display"/>
+              <xs:element type="xs:short" name="promise_range"/>
+              <xs:element type="xs:string" name="trx_date"/>
+              <xs:element type="xs:string" name="due_date"/>
+              <xs:element type="xs:float" name="amount_due_original"/>
+              <xs:element type="xs:float" name="amount_due_remaining"/>
+              <xs:element type="xs:string" name="invoice_currency_code"/>
+              <xs:element type="xs:byte" name="disputs_count"/>
+              <xs:element type="xs:byte" name="promises_count"/>
+              <xs:element type="xs:byte" name="promise_broken"/>
+              <xs:element type="xs:string" name="bu_code"/>
+              <xs:element type="xs:int" name="party_no"/>
+              <xs:element type="xs:string" name="bill_to_site_id"/>
+              <xs:element type="xs:string" name="email_id"/>
+              <xs:element type="xs:string" name="extn"/>
+              <xs:element type="xs:string" name="telephone"/>
+              <xs:element type="xs:string" name="first_name"/>
+              <xs:element type="xs:string" name="last_name"/>
+              <xs:element type="xs:string" name="payment_term"/>
+              <xs:element type="xs:string" name="folio_display_receipt"/>
+              <xs:element type="xs:string" name="folio_number"/>
+              <xs:element type="xs:string" name="fo_status"/>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="num" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:byte" name="rows_count"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
